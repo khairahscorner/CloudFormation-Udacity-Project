@@ -288,8 +288,8 @@ Resources:
     Type: AWS::AutoScaling::AutoScalingGroup
     DependsOn: VPCInternetGatewayAttachment
     Properties:
-      MaxSize: '2'
-      MinSize: '1'
+      MaxSize: '6'
+      MinSize: '4'
       VPCZoneIdentifier:
         -  !Ref PrivateSubnet1
         -  !Ref PrivateSubnet2
