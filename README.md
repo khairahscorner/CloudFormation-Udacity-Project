@@ -11,7 +11,6 @@ It contains the following files:
 <br/>
 
 ## What's Needed
-<br/>
 
 ### 1. AWS
 You would need to have an AWS account (a free tier works, but please take note of resources that are not free/eligible for free tier e.g NAT gateways, unattached EIPs, etc.)
@@ -32,8 +31,6 @@ The following will also help:
 
 ## How to run
 You can use either the `create.sh` or `create-inline-params.sh` file:
-
-<br/>
 
 ### 1) `create-inline-params.sh` file (Preferred)
 
