@@ -216,6 +216,11 @@ Resources:
         Description: allow access incoming traffic
         FromPort: 80
         ToPort: 80
+      - IpProtocol: tcp
+        CidrIp: 0.0.0.0/0
+        Description: allow access incoming traffic
+        FromPort: 22
+        ToPort: 22
       SecurityGroupEgress: 
       - IpProtocol: tcp
         CidrIp: 0.0.0.0/0
@@ -255,6 +260,7 @@ Resources:
       IamInstanceProfile: !Ref ProfileWithRolesForOurApp
       ImageId: !Ref LaunchConfigAMI
       InstanceType: !Ref InstanceType
+      KeyName: key3
       SecurityGroups:
         - !Ref AppServersSecurityGroup
       BlockDeviceMappings:
@@ -265,10 +271,12 @@ Resources:
         Fn::Base64: !Sub |
             #!/bin/bash
             apt-get update -y
-            apt-get install apache2 -y
+            apt-get install apache2 unzip -y
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            ./aws/install
             systemctl start apache2.service
-            cd /var/www/html
-            echo "It works! Udagram, Udacity!" > index.html
+            aws s3 cp s3://udacity-project2-airah/index.html /var/www/html/index.html
 
   ServersTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
