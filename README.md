@@ -8,6 +8,7 @@ It contains the following files:
 3. Architecture Diagram - `Project2.jpeg`
 4. .sh scripts - `create.sh`, `create-inline-params.sh`
 
+Deployment URL: http://proje-loadb-37918pggsfjx-949181256.us-east-1.elb.amazonaws.com/
 <br/>
 
 ## What's Needed
