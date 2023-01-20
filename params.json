@@ -8,6 +8,10 @@
         "ParameterValue": "ami-09d56f8956ab235b3"
     },
     {
+        "ParameterKey": "LaunchTemplateAMI",
+        "ParameterValue": "ami-09d56f8956ab235b3"
+    },
+    {
         "ParameterKey": "MyIp",
         "ParameterValue": "102.89.33.38"
     }
